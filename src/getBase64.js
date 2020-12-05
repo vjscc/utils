@@ -3,7 +3,7 @@
  * @param {*} file file object
  * @return {Promise<any>} a Promise with converting result
  */
-export function getBase64(file) {
+export default function getBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
     reader.readAsDataURL(file)
