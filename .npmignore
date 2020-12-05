@@ -6,7 +6,7 @@ node_modules
 
 # eslint config
 .eslintignore
-.eslintrc
+.eslintrc.*
 
 # rollup config
 rollup.config.js
