@@ -24,13 +24,13 @@ export default {
     },
     {
       name,
-      file: path.join('dist/browser/', `gmUtils-${pkg.version}.js`),
+      file: path.join('dist/browser/', `${pkg.name}-${pkg.version}.js`),
       format: 'iife',
       sourcemap: true
     },
     {
       name,
-      file: path.join('dist/browser/', `gmUtils-${pkg.version}.min.js`),
+      file: path.join('dist/browser/', `${pkg.name}-${pkg.version}.min.js`),
       format: 'iife',
       sourcemap: true,
       plugins: [terser()]
