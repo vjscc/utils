@@ -1,0 +1,17 @@
+# dependencies 
+node_modules
+
+# babel config
+.babelrc
+
+# eslint config
+.eslintignore
+.eslintrc
+
+# rollup config
+rollup.config.js
+
+# dev dir
+src
+
+
