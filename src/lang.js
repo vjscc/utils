@@ -17,7 +17,7 @@ export function isArray(value) {
 }
 
 /**
- * Determine whether it is a plain object.
+ * Checks if `value` is a plain object.
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be a plain object.
  */
