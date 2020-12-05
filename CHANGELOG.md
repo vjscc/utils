@@ -9,7 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- init repo, add rollup, babel, eslint and so on.
-- add `createRandomInteger` and `createRandomString` function.
-- add `getBase64` function.
-- add `convertNumberToMoney` function.
+- Init repo, add rollup, babel, eslint and so on.
+- Add `createRandomInteger` and `createRandomString` function.
+- Add `getBase64` function.
+- Add `convertNumberToMoney` function.
+
+## 0.2.0 - 2020-12-05
+
+### Added
+
+- Add `isUndefined`, `isArray`, `isObject` and `isPlainObject` function.
+
+### Changed
+
+- Change the way of how to export in `index.js`
