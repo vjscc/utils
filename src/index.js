@@ -1,5 +1,11 @@
-import { createRandomInteger, createRandomString } from './createRandom'
-import { getBase64 } from './getBase64'
-import { convertNumberToMoney } from './money'
+import * as createRandom from './createRandom'
+import getBase64 from './getBase64'
+import * as money from './money'
+import * as lang from './lang'
 
-export { createRandomInteger, createRandomString, getBase64, convertNumberToMoney }
+export default {
+  ...createRandom,
+  getBase64,
+  ...money,
+  ...lang
+}
