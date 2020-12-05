@@ -7,7 +7,7 @@ import { terser } from 'rollup-plugin-terser'
 import clear from 'rollup-plugin-clear'
 import pkg from './package.json'
 
-const name = 'GmUtils'
+const name = 'Utils145'
 
 export default {
   input: 'src/index.js',
