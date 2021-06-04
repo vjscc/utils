@@ -2,7 +2,27 @@
 
 Front-end utils collection.
 
-- createRandomInteger
-- createRandomString
-- getBase64
-- convertNumberToMoney
+- [createRandom](src/createRandom.js)
+
+  - createRandomInteger
+  - createRandomString
+  - createRandomStringWidthDivider
+
+- [dom](src/dom.js)
+
+  - isHTMLElement
+  - getBase64
+
+- [lang](src/lang.js)
+
+  - isUndefined
+  - isString
+  - isArray
+  - isObject
+  - isPlainObject
+  - isObjectLike
+  - isFunction
+
+- [money](src/money.js)
+
+  - convertNumberToMoney
