@@ -6,6 +6,7 @@
     "utils"
   ],
   "author": "GuTianhuang",
+  "homepage": "https://github.com/Gu-Miao/utils145",
   "license": "MIT",
   "main": "dist/lib/index.js",
   "browser": "dist/lib/index.js",
