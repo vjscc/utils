@@ -1,11 +1,11 @@
 import * as createRandom from './createRandom'
-import getBase64 from './getBase64'
 import * as money from './money'
 import * as lang from './lang'
+import * as dom from './dom'
 
 export default {
   ...createRandom,
-  getBase64,
   ...money,
-  ...lang
+  ...lang,
+  ...dom
 }

@@ -23,3 +23,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change the way of how to export in `index.js`
+
+## 0.2.1 - 2021-06-04
+
+### Added
+
+- Add `isString`, `isObjectLike` and `isFunction` function.
+- Add `dom.js` and `isHTMLElement` function.
+- Add `createRandomStringWidthDivider` function.
+
+### Changed
+
+- Modify coments.
+- Move `getBase64` function to `dom.js` and remove prev js file.
