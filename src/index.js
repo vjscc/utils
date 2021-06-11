@@ -1,11 +1,32 @@
-import * as createRandom from './createRandom'
-import * as money from './money'
-import * as lang from './lang'
-import * as dom from './dom'
+import {
+  createRandomInteger,
+  createRandomString,
+  createRandomStringWidthDivider
+} from './createRandom'
+import { convertNumberToMoney } from './money'
+import {
+  isUndefined,
+  isString,
+  isArray,
+  isObject,
+  isPlainObject,
+  isObjectLike,
+  isFunction
+} from './lang'
+import { isHTMLElement, getBase64 } from './dom'
 
-export default {
-  ...createRandom,
-  ...money,
-  ...lang,
-  ...dom
+export {
+  createRandomInteger,
+  createRandomString,
+  createRandomStringWidthDivider,
+  convertNumberToMoney,
+  isUndefined,
+  isString,
+  isArray,
+  isObject,
+  isPlainObject,
+  isObjectLike,
+  isFunction,
+  isHTMLElement,
+  getBase64
 }

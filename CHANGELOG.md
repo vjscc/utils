@@ -36,3 +36,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Modify coments.
 - Move `getBase64` function to `dom.js` and remove prev js file.
+
+## 0.2.2 - 2021-06-11
+
+### Changed
+
+- Change export
+- Update README.md
