@@ -6,13 +6,18 @@ import {
 import { convertNumberToMoney } from './money'
 import {
   isUndefined,
+  isNull,
   isString,
-  isArray,
+  isNumber,
+  isBoolean,
+  isSymbol,
+  isBigInt,
+  isObjectLike,
   isObject,
   isPlainObject,
-  isObjectLike,
+  isArray,
   isFunction
-} from './lang'
+} from './type'
 import { isHTMLElement, getBase64 } from './dom'
 
 export {
@@ -21,11 +26,16 @@ export {
   createRandomStringWidthDivider,
   convertNumberToMoney,
   isUndefined,
+  isNull,
   isString,
-  isArray,
+  isNumber,
+  isBoolean,
+  isSymbol,
+  isBigInt,
+  isObjectLike,
   isObject,
   isPlainObject,
-  isObjectLike,
+  isArray,
   isFunction,
   isHTMLElement,
   getBase64
