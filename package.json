@@ -12,13 +12,15 @@
   "browser": "dist/lib/index.js",
   "module": "dist/es/index.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "doc": "jsdoc src -r --verbose --package package.json -r README.md"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-eslint": "^8.0.1",
+    "jsdoc": "^3.6.7",
     "rollup": "^2.34.1",
     "rollup-plugin-clear": "^2.0.7",
     "rollup-plugin-commonjs": "^10.1.0",
