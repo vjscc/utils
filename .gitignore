@@ -6,3 +6,6 @@ dist
 
 # yarn log
 yarn-*.log
+
+# jsdoc
+out
