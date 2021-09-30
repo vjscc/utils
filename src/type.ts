@@ -5,7 +5,7 @@
  * @param {*} value The value to query.
  * @returns {string} Returns the toStringTag.
  */
-function getTag(value) {
+function getTag(value: unknown): string {
   return Object.prototype.toString.call(value)
 }
 
@@ -15,7 +15,7 @@ function getTag(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be undefined.
  */
-export function isUndefined(value) {
+export function isUndefined(value: unknown): boolean {
   return value === undefined
 }
 
@@ -25,7 +25,7 @@ export function isUndefined(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be null.
  */
-export function isNull(value) {
+export function isNull(value: unknown): boolean {
   return value === null
 }
 
@@ -35,7 +35,7 @@ export function isNull(value) {
  * @param {*} value The value to check.
  * @returns {boolean} Returns true if value is a string, else false.
  */
-export function isString(value) {
+export function isString(value: unknown): boolean {
   return getTag(value) === '[object String]'
 }
 
@@ -45,7 +45,7 @@ export function isString(value) {
  * @param {*} value The value to check.
  * @returns {boolean} Returns true if value is a number, else false.
  */
-export function isNumber(value) {
+export function isNumber(value: unknown): boolean {
   return typeof value === 'number' || (typeof value === 'object' && value instanceof Number)
 }
 
@@ -55,7 +55,7 @@ export function isNumber(value) {
  * @param {*} value The value to check.
  * @returns {boolean} Returns true if value is a boolean, else false.
  */
-export function isBoolean(value) {
+export function isBoolean(value: unknown): boolean {
   return typeof value === 'boolean'
 }
 
@@ -65,7 +65,7 @@ export function isBoolean(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be a symbol.
  */
-export function isSymbol(value) {
+export function isSymbol(value: unknown): boolean {
   const type = typeof value
   return (
     type == 'symbol' || (type === 'object' && value != null && getTag(value) == '[object Symbol]')
@@ -78,7 +78,7 @@ export function isSymbol(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be a BigInt.
  */
-export function isBigInt(value) {
+export function isBigInt(value: unknown): boolean {
   return typeof value == 'bigint'
 }
 
@@ -89,7 +89,7 @@ export function isBigInt(value) {
  * @param {*} value The value to check.
  * @returns {boolean} Returns true if value is object-like, else false.
  */
-export function isObjectLike(value) {
+export function isObjectLike(value: unknown): boolean {
   return typeof value === 'object' && value !== null
 }
 
@@ -99,7 +99,7 @@ export function isObjectLike(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be a object.
  */
-export function isObject(value) {
+export function isObject(value: unknown): boolean {
   const type = typeof value
   return value !== null && (type === 'object' || type === 'function')
 }
@@ -110,7 +110,7 @@ export function isObject(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be a plain object.
  */
-export function isPlainObject(value) {
+export function isPlainObject(value: unknown): boolean {
   if (typeof value !== 'object' || value === null) return false
 
   let proto = value
@@ -127,7 +127,7 @@ export function isPlainObject(value) {
  * @param {*} value The value to check.
  * @returns {boolean} True if the argument appears to be an array.
  */
-export function isArray(value) {
+export function isArray(value: unknown): boolean {
   return Array.isArray(value)
 }
 
@@ -137,6 +137,6 @@ export function isArray(value) {
  * @param {*} value The value to check.
  * @returns {boolean} Returns true if value is a function, else false.
  */
-export function isFunction(value) {
+export function isFunction(value: unknown): boolean {
   return typeof value === 'function'
 }

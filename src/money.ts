@@ -4,7 +4,7 @@
  * @param {string|number} number Money number.
  * @return {string} Money with thousand mark.
  */
-export function convertNumberToMoney(number) {
+export function convertNumberToMoney(number: number | string): string {
   const num = parseFloat(number?.toString())
   const negative = num < 0 ? '-' : ''
   const float = Math.abs(num).toFixed(2)

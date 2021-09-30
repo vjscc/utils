@@ -1,11 +1,2 @@
-# dependencies 
 node_modules
-
-# build dir
 dist
-
-# yarn log
-yarn-*.log
-
-# jsdoc
-out

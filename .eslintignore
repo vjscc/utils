@@ -1,8 +1,2 @@
-# dependencies 
-node_modules
-
-# build dir
 dist
-
-# rollup config
-# rollup.config.js
+node_modules

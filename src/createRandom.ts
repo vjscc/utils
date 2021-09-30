@@ -4,7 +4,9 @@
  * @param {number} range Max number of random number, round down.
  * @returns {number} Random integer.
  */
-export const createRandomInteger = range => Math.round(Math.random() * Math.floor(range))
+export function createRandomInteger(range: number): number {
+  return Math.round(Math.random() * Math.floor(range))
+}
 
 /**
  * Generaotr random string.
@@ -12,7 +14,7 @@ export const createRandomInteger = range => Math.round(Math.random() * Math.floo
  * @param {number} length Length of string.
  * @returns {string} Random string.
  */
-export function createRandomString(length) {
+export function createRandomString(length: number): string {
   const base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
   let res = ''
   let i = length
@@ -28,7 +30,7 @@ export function createRandomString(length) {
  * @param {string} divdier Divider of string chunks.
  * @returns {string} Random String with dividers.
  */
-export function createRandomStringWidthDivider(format = 'xxxx-xxxx-xxxx', divdier = '-') {
+export function createRandomStringWidthDivider(format = 'xxxx-xxxx-xxxx', divdier = '-'): string {
   if (!/^x+(-x+)*$/.test(format))
     throw new SyntaxError(
       `Format only support char 'x' as placeholder, '-' as divider,

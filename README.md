@@ -1,28 +1,5 @@
-# utils145
+# @vjscc/utils
 
-Front-end utils collection.
+Vanilla JavaScript utils collection.
 
-- [createRandom](src/createRandom.js)
-
-  - createRandomInteger
-  - createRandomString
-  - createRandomStringWidthDivider
-
-- [dom](src/dom.js)
-
-  - isHTMLElement
-  - getBase64
-
-- [lang](src/lang.js)
-
-  - isUndefined
-  - isString
-  - isArray
-  - isObject
-  - isPlainObject
-  - isObjectLike
-  - isFunction
-
-- [money](src/money.js)
-
-  - convertNumberToMoney
+[简体中文](./README_zh.md) | **English**
