@@ -21,8 +21,10 @@ describe('Generate correct random string', () => {
   })
 
   test('Return length-correct string', () => {
-    const length = Math.round(Math.random() * 1000)
-    const string = createRandomString(length)
-    expect(string.length).toBe(length)
+    for (let i = 0; i < times; i++) {
+      const length = Math.round(Math.random() * 1000)
+      const string = createRandomString(length)
+      expect(string.length).toBe(length)
+    }
   })
 })
