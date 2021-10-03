@@ -1,8 +1,8 @@
 /**
  * Generator a random number in [0, range].
  *
- * @param {number} range Max number of random number, round down.
- * @returns {number} Random integer.
+ * @param range Max number of random number, round down.
+ * @returns Random integer.
  */
 export function createRandomInteger(range: number): number {
   return Math.round(Math.random() * Math.floor(range))
@@ -11,8 +11,8 @@ export function createRandomInteger(range: number): number {
 /**
  * Generaotr random string.
  *
- * @param {number} length Length of string.
- * @returns {string} Random string.
+ * @param length Length of string.
+ * @returns Random string.
  */
 export function createRandomString(length: number): string {
   const base = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -26,9 +26,9 @@ export function createRandomString(length: number): string {
 /**
  * Generaotr random string with dividers.
  *
- * @param {string} format Format of string.
- * @param {string} divdier Divider of string chunks.
- * @returns {string} Random String with dividers.
+ * @param format Format of string.
+ * @param divdier Divider of string chunks.
+ * @returns Random String with dividers.
  */
 export function createRandomStringWidthDivider(format = 'xxxx-xxxx-xxxx', divdier = '-'): string {
   if (!/^x+(-x+)*$/.test(format))

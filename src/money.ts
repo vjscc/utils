@@ -1,8 +1,8 @@
 /**
  * Convert number to money with thousand mark.
  *
- * @param {string|number} number Money number.
- * @return {string} Money with thousand mark.
+ * @param number Money number.
+ * @return Money with thousand mark.
  */
 export function convertNumberToMoney(number: number | string): string {
   const num = parseFloat(number?.toString())
