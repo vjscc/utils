@@ -29,4 +29,23 @@ describe('Generate correct random string with divider', () => {
       expect(createRandomStringWidthDivider(format).length).toBe(format.length)
     }
   })
+
+  test('Return correct string', () => {
+    const format = 'xxxx-xxxxxxxx-x'
+    const divider = '_'
+    const regexp = /^[a-zA-Z0-9]{4}_[a-zA-Z0-9]{8}_[a-zA-Z0-9]{1}$/
+    for (let i = 0; i < times; i++) {
+      expect(regexp.test(createRandomStringWidthDivider(format, divider))).toBeTruthy()
+    }
+  })
+
+  test('Throw error when pass wrong format', () => {
+    const dividers = ['\\', '_', '^', '~']
+    const formatSplits = [1, 2, 3, 7, 3, 4].map(length => new Array(length).fill('x'))
+    for (let i = 0; i < times; i++) {
+      const index = i % dividers.length
+      const format = formatSplits.join(dividers[index])
+      expect(() => createRandomStringWidthDivider(format)).toThrow()
+    }
+  })
 })
