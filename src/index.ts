@@ -18,7 +18,8 @@ import {
   isArray,
   isFunction
 } from './type'
-import { isHTMLElement, getBase64 } from './dom'
+import { isHTMLElement } from './dom'
+import { getBase64 } from './bom'
 
 export {
   createRandomInteger,
