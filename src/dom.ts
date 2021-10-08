@@ -6,5 +6,5 @@
  */
 export function isHTMLElement(value: unknown): boolean {
   const assertValue = value as Record<string, unknown>
-  return /^HTML\S*Element$/.test(assertValue?.constructor?.name) && assertValue?.nodeType === 1
+  return /^HTML\S*Element$/.test(assertValue?.constructor?.name) && assertValue.nodeType === 1
 }

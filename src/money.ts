@@ -1,3 +1,5 @@
+import { isString } from './type'
+
 /**
  * Convert number to money with thousand mark.
  *
@@ -5,7 +7,7 @@
  * @return Money with thousand mark.
  */
 export function convertNumberToMoney(number: number | string): string {
-  const num = parseFloat(number?.toString())
+  const num = isString(number) ? parseFloat(number as string) : (number as number)
   const negative = num < 0 ? '-' : ''
   const float = Math.abs(num).toFixed(2)
   const [intPart, floatPart] = float.split('.')
