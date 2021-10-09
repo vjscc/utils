@@ -1,4 +1,4 @@
-import { unknownFunction } from './functions'
+import { anyFunction } from './functions'
 
 let i = 0
 const idMap = new Map<number, number>()
@@ -20,7 +20,7 @@ function cleanup(id: number) {
  * @param delayFrames Frames before fn executing.
  * @returns Return id of this RAF.
  */
-export function createRAF(callback: unknownFunction, delayFrames: number): number {
+export function createRAF(callback: anyFunction, delayFrames: number): number {
   const id = i++
 
   /**
