@@ -30,13 +30,13 @@ describe('Generate correct money string with thousand mark', () => {
     expect(() => convertNumberToMoney('-Infinity')).toThrow()
   })
 
-  test('Pass illegal as second argument', () => {
+  test('Pass illegal number as second argument', () => {
     expect(() => convertNumberToMoney(1000, -1)).toThrow()
     expect(() => convertNumberToMoney(1000, 30)).toThrow()
     expect(() => convertNumberToMoney(1000, 10.5)).toThrow()
   })
 
-  test('Return current format', () => {
+  test('Return correct format', () => {
     const regexp = /^\d{1,3}(,\d{3})*\.\d{0,20}$/
     expect(regexp.test(convertNumberToMoney(1000))).toBeTruthy()
     expect(regexp.test(convertNumberToMoney(1e12))).toBeTruthy()
