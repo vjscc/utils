@@ -1,69 +1,68 @@
 /**
- * Gets the toStringTag of value.
+ * Get the toString tag of `value`.
  *
- * @private
  * @param value The value to query.
- * @returns Returns the toStringTag.
+ * @returns The toString tag.
  */
 function getTag(value: unknown): string {
   return Object.prototype.toString.call(value)
 }
 
 /**
- * Checks if value is undefined.
+ * Checks if `value` is `undefined`.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be undefined.
+ * @returns `true` if the argument appears to be `undefined`.
  */
 export function isUndefined(value: unknown): boolean {
   return value === undefined
 }
 
 /**
- * Checks if value is null.
+ * Checks if `value` is `null`.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be null.
+ * @returns `true` if the argument appears to be `null`.
  */
 export function isNull(value: unknown): boolean {
   return value === null
 }
 
 /**
- * Checks if value is a string.
+ * Checks if `value` is a string.
  *
  * @param value The value to check.
- * @returns Returns true if value is a string, else false.
+ * @returns `true` if value is a string, otherwise `false`.
  */
 export function isString(value: unknown): boolean {
   return getTag(value) === '[object String]'
 }
 
 /**
- * Checks if value is a number.
+ * Checks if `value` is a number.
  *
  * @param value The value to check.
- * @returns Returns true if value is a number, else false.
+ * @returns `true` if value is a number, otherwise `false`.
  */
 export function isNumber(value: unknown): boolean {
   return typeof value === 'number' || (typeof value === 'object' && value instanceof Number)
 }
 
 /**
- * Checks if value is a boolean.
+ * Checks if `value` is a boolean.
  *
  * @param value The value to check.
- * @returns Returns true if value is a boolean, else false.
+ * @returns `true` if value is a boolean, otherwise `false`.
  */
 export function isBoolean(value: unknown): boolean {
   return typeof value === 'boolean'
 }
 
 /**
- * Checks if value is a symbol.
+ * Checks if `value` is a symbol.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be a symbol.
+ * @returns `true` if the argument appears to be a symbol.
  */
 export function isSymbol(value: unknown): boolean {
   const type = typeof value
@@ -73,31 +72,31 @@ export function isSymbol(value: unknown): boolean {
 }
 
 /**
- * Checks if value is a BigInt.
+ * Checks if `value` is a `BigInt`.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be a BigInt.
+ * @returns `true` if the argument appears to be a `BigInt`.
  */
 export function isBigInt(value: unknown): boolean {
   return typeof value == 'bigint'
 }
 
 /**
- * Checks if value is object-like. A value is object-like if it's not null
- * and has a typeof result of "object".
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a typeof result of `object`.
  *
  * @param value The value to check.
- * @returns Returns true if value is object-like, else false.
+ * @returns `true` if value is object-like, otherwise `false`.
  */
 export function isObjectLike(value: unknown): boolean {
   return typeof value === 'object' && value !== null
 }
 
 /**
- * Checks if value is a object.
+ * Checks if `value` is a object.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be a object.
+ * @returns `true` if the argument appears to be a object.
  */
 export function isObject(value: unknown): boolean {
   const type = typeof value
@@ -105,10 +104,10 @@ export function isObject(value: unknown): boolean {
 }
 
 /**
- * Checks if value is a plain object.
+ * Checks if `value` is a plain object.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be a plain object.
+ * @returns `true` if the argument appears to be a plain object.
  */
 export function isPlainObject(value: unknown): boolean {
   if (typeof value !== 'object' || value === null) return false
@@ -122,20 +121,20 @@ export function isPlainObject(value: unknown): boolean {
 }
 
 /**
- * Checks if value is an array.
+ * Checks if `value` is an array.
  *
  * @param value The value to check.
- * @returns True if the argument appears to be an array.
+ * @returns `true` if the argument appears to be an array.
  */
 export function isArray(value: unknown): boolean {
   return Array.isArray(value)
 }
 
 /**
- * Checks if value is classified as a Function object.
+ * Checks if `value` is classified as a Function object.
  *
  * @param value The value to check.
- * @returns Returns true if value is a function, else false.
+ * @returns `true` if value is a function, otherwise `false`.
  */
 export function isFunction(value: unknown): boolean {
   return typeof value === 'function'
