@@ -1,4 +1,4 @@
-import { getBase64 } from './bom'
+import { getBase64, isWindow } from './bom'
 import {
   createRandomInteger,
   createRandomString,
@@ -7,6 +7,7 @@ import {
 import { isHTMLElement } from './dom'
 import { debounce, throttle } from './functions'
 import { convertNumberToMoney } from './money'
+import { createRAF, cancelRAF } from './raf'
 import {
   isUndefined,
   isNull,
@@ -24,6 +25,7 @@ import {
 
 export {
   getBase64,
+  isWindow,
   createRandomInteger,
   createRandomString,
   createRandomStringWidthDivider,
@@ -31,6 +33,8 @@ export {
   debounce,
   throttle,
   convertNumberToMoney,
+  createRAF,
+  cancelRAF,
   isUndefined,
   isNull,
   isString,
