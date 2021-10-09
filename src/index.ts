@@ -1,8 +1,11 @@
+import { getBase64 } from './bom'
 import {
   createRandomInteger,
   createRandomString,
   createRandomStringWidthDivider
 } from './createRandom'
+import { isHTMLElement } from './dom'
+import { debounce, throttle } from './functions'
 import { convertNumberToMoney } from './money'
 import {
   isUndefined,
@@ -18,13 +21,15 @@ import {
   isArray,
   isFunction
 } from './type'
-import { isHTMLElement } from './dom'
-import { getBase64 } from './bom'
 
 export {
+  getBase64,
   createRandomInteger,
   createRandomString,
   createRandomStringWidthDivider,
+  isHTMLElement,
+  debounce,
+  throttle,
   convertNumberToMoney,
   isUndefined,
   isNull,
@@ -37,7 +42,5 @@ export {
   isObject,
   isPlainObject,
   isArray,
-  isFunction,
-  isHTMLElement,
-  getBase64
+  isFunction
 }
