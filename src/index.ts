@@ -1,3 +1,4 @@
+import { fadeIn, fadeOut } from './animation'
 import { getBase64, isWindow } from './bom'
 import {
   createRandomInteger,
@@ -24,6 +25,8 @@ import {
 } from './type'
 
 export {
+  fadeIn,
+  fadeOut,
   getBase64,
   isWindow,
   createRandomInteger,
