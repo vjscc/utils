@@ -20,7 +20,7 @@ function cleanup(id: number) {
  * @param delayFrames Frames before fn executing.
  * @returns Return id of this RAF.
  */
-export function createRAF(callback: anyFunction, delayFrames: number): number {
+export function createRAF(callback: anyFunction, delayFrames = 1): number {
   const id = i++
 
   /**
