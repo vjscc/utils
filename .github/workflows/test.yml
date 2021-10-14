@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm install yarn -g
     - run: yarn install --frozen-lockfile
-    - run: yarn test
+    - run: yarn jest
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
