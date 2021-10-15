@@ -6,7 +6,7 @@ import { isNull, isUndefined } from './types'
  * @param file File object.
  * @return Promise of result.
  */
-export function getBase64(file: File): Promise<FileReader['result'] | ProgressEvent> {
+export function getBase64(file: File): Promise<FileReader['result'] | ProgressEvent<FileReader>> {
   return new Promise((res, rej) => {
     const reader = new FileReader()
     reader.readAsDataURL(file)
