@@ -54,6 +54,7 @@ import {
 import { convertNumberToMoney } from './money'
 import { createRAF, cancelRAF } from './raf'
 import { createRandomInteger, createRandomString, createRandomStringWidthDivider } from './random'
+import { timingFunction } from './timingFunction'
 import {
   isUndefined,
   isNull,
@@ -132,6 +133,7 @@ export {
   createRandomInteger,
   createRandomString,
   createRandomStringWidthDivider,
+  timingFunction,
   isUndefined,
   isNull,
   isString,
