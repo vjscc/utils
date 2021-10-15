@@ -1,6 +1,6 @@
 import { fadeIn, fadeOut } from './animations'
 import { getBase64, isWindow } from './bom'
-import { isHTMLElement } from './dom'
+import { isHTMLElement, isHTMLElementOrDocument, isStringOrHTMLElement } from './dom'
 import { debounce, throttle } from './functions'
 import {
   E,
@@ -75,6 +75,8 @@ export {
   getBase64,
   isWindow,
   isHTMLElement,
+  isHTMLElementOrDocument,
+  isStringOrHTMLElement,
   debounce,
   throttle,
   E,
