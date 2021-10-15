@@ -17,9 +17,8 @@ describe('Generate correct random string with divider', () => {
   })
 
   test('Return length-correct string', () => {
-    const format = 'xxxx-xxx-xxxxx-xxxxxxxx-x'
     for (let i = 0; i < times; i++) {
-      expect(createRandomStringWidthDivider(format).length).toBe(format.length)
+      expect(createRandomStringWidthDivider().length).toBe(14)
     }
   })
 

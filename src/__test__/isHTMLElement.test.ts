@@ -1,6 +1,6 @@
 import { isHTMLElement } from '../dom'
 
-describe('Generate correct random string with divider', () => {
+describe('Return correct flag', () => {
   test('Test basic types', () => {
     expect(isHTMLElement(undefined)).toBeFalsy()
     expect(isHTMLElement(null)).toBeFalsy()
@@ -24,8 +24,27 @@ describe('Generate correct random string with divider', () => {
     expect(isHTMLElement({ nodeType: 1 })).toBeFalsy()
   })
 
+  test('Test object instace of class whose name includes HTML and Element', () => {
+    class HTMLCustomElement {
+      nodeType: number
+      constructor(nodeType: number) {
+        this.nodeType = nodeType || 1
+      }
+    }
+
+    expect(isHTMLElement(new HTMLCustomElement(1))).toBeFalsy()
+  })
+
   test('Test div', () => {
     const div = document.createElement('div')
     expect(isHTMLElement(div)).toBeTruthy()
+  })
+
+  test('Test document', () => {
+    expect(isHTMLElement(document)).toBeFalsy()
+  })
+
+  test('Test documentElement', () => {
+    expect(isHTMLElement(document.documentElement)).toBeTruthy()
   })
 })
