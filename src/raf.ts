@@ -1,7 +1,7 @@
 import { anyFunction } from './functions'
 
 let i = 0
-const idMap = new Map<number, number>()
+const idMap = new Map<number, ReturnType<typeof requestAnimationFrame>>()
 
 /**
  * Clean `id`.
