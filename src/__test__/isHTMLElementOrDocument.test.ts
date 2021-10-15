@@ -1,4 +1,4 @@
-import { isHTMLElementOrDocument } from '../dom'
+import { isHTMLElementOrDocument } from '../index'
 
 describe('Return correct flag', () => {
   test('Test div', () => {

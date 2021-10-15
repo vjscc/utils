@@ -1,4 +1,4 @@
-import { getElementViaStringOrHTMLElement } from '../dom'
+import { getElementViaStringOrHTMLElement } from '../index'
 
 describe('Return correct element or null if not found', () => {
   test('Test strings', () => {

@@ -1,4 +1,4 @@
-import { isStringOrHTMLElement } from '../dom'
+import { isStringOrHTMLElement } from '../index'
 
 describe('Return correct flag', () => {
   test('Test string', () => {

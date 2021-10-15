@@ -1,4 +1,4 @@
-import { createRandomInteger } from '../random'
+import { createRandomInteger } from '../index'
 
 const times = 100
 

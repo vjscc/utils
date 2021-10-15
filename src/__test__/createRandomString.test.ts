@@ -1,4 +1,4 @@
-import { createRandomString } from '../random'
+import { createRandomString } from '../index'
 
 const times = 100
 
