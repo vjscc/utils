@@ -1,4 +1,4 @@
-import { isNull, isUndefined } from './type'
+import { isNull, isUndefined } from './types'
 
 /**
  * Convert file to base64 by FileReader.

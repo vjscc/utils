@@ -1,4 +1,4 @@
-import { fadeOut, fadeIn } from '../src/animation'
+import { fadeOut, fadeIn } from '../src/animations'
 
 const h1 = document.querySelector('h1')
 if (!h1) {

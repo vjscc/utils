@@ -1,4 +1,4 @@
-import { createRandomStringWidthDivider } from '../createRandom'
+import { createRandomStringWidthDivider } from '../random'
 
 const times = 100
 

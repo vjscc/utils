@@ -33,8 +33,7 @@ export function createRandomString(length: number): string {
 export function createRandomStringWidthDivider(format = 'xxxx-xxxx-xxxx', divdier = '-'): string {
   if (!/^x+(-x+)*$/.test(format))
     throw new SyntaxError(
-      `Format only support char 'x' as placeholder, '-' as divider,
-       and must start and end with 'x', Like: 'xxxx-xxxx-xxxx'.`
+      `Format only support char 'x' as placeholder, '-' as divider, and must start and end with 'x', Like: 'xxxx-xxxx-xxxx'.`
     )
 
   let res = ''

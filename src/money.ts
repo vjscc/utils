@@ -1,4 +1,4 @@
-import { isString } from './type'
+import { isString } from './types'
 
 /**
  * Convert number to money with thousand mark.

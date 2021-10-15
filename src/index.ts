@@ -1,14 +1,10 @@
-import { fadeIn, fadeOut } from './animation'
+import { fadeIn, fadeOut } from './animations'
 import { getBase64, isWindow } from './bom'
-import {
-  createRandomInteger,
-  createRandomString,
-  createRandomStringWidthDivider
-} from './createRandom'
 import { isHTMLElement } from './dom'
 import { debounce, throttle } from './functions'
 import { convertNumberToMoney } from './money'
 import { createRAF, cancelRAF } from './raf'
+import { createRandomInteger, createRandomString, createRandomStringWidthDivider } from './random'
 import {
   isUndefined,
   isNull,
@@ -22,22 +18,22 @@ import {
   isPlainObject,
   isArray,
   isFunction
-} from './type'
+} from './types'
 
 export {
   fadeIn,
   fadeOut,
   getBase64,
   isWindow,
-  createRandomInteger,
-  createRandomString,
-  createRandomStringWidthDivider,
   isHTMLElement,
   debounce,
   throttle,
   convertNumberToMoney,
   createRAF,
   cancelRAF,
+  createRandomInteger,
+  createRandomString,
+  createRandomStringWidthDivider,
   isUndefined,
   isNull,
   isString,
