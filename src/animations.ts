@@ -1,6 +1,6 @@
 import { anyFunction } from './functions'
 import { createRAF } from './raf'
-import { timingFunctionName, timingFunction } from './timingFunction'
+import { timingFunctionName, useTimingFunction } from './useTimingFunction'
 
 const defalutDuration = 1.25 * 1000
 
@@ -45,7 +45,7 @@ export function fadeOut(el: HTMLElement, options: IFadeFnOptions = {}): void {
   function fade() {
     const now = Date.now()
     const time = now - startTime
-    const nextOpacity = timingFunction(
+    const nextOpacity = useTimingFunction(
       timingFunctionName,
       time > duration ? duration : time,
       startOpacity,
@@ -94,7 +94,7 @@ export function fadeIn(el: HTMLElement, options: IFadeFnOptions = {}): void {
   function fade() {
     const now = Date.now()
     const time = now - startTime
-    const nextOpacity = timingFunction(
+    const nextOpacity = useTimingFunction(
       timingFunctionName,
       time > duration ? duration : time,
       0,

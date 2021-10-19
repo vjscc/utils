@@ -179,7 +179,7 @@ export type timingFunctionName = keyof ITimingFunctionMap
  * @param d Duration.
  * @returns Current value.
  */
-export function timingFunction(
+export function useTimingFunction(
   fnName: timingFunctionName,
   t: number,
   b: number,
