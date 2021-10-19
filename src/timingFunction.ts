@@ -1,7 +1,6 @@
-import { pow, sqrt, sin, cos, PI } from './math'
-
 type timeFunction = (x: number) => number
 
+const { pow, sqrt, sin, cos, PI } = Math
 const c1 = 1.70158
 const c2 = c1 * 1.525
 const c3 = c1 + 1
@@ -12,7 +11,7 @@ function bounceOut(x: number): number {
   const n1 = 7.5625,
     d1 = 2.75
   if (x < 1 / d1) {
-    return n1 * x * x
+    return n1 * pow(x, 2)
   } else if (x < 2 / d1) {
     return n1 * (x -= 1.5 / d1) * x + 0.75
   } else if (x < 2.5 / d1) {
@@ -65,40 +64,40 @@ const timingFunctionMap: ITimingFunctionMap = {
     return 0.5 - cos(x * Math.PI) / 2
   },
   easeInQuad(x: number) {
-    return x * x
+    return pow(x, 2)
   },
   easeOutQuad(x: number) {
     return 1 - (1 - x) * (1 - x)
   },
   easeInOutQuad(x: number) {
-    return x < 0.5 ? 2 * x * x : 1 - pow(-2 * x + 2, 2) / 2
+    return x < 0.5 ? 2 * pow(x, 2) : 1 - pow(-2 * x + 2, 2) / 2
   },
   easeInCubic(x: number) {
-    return x * x * x
+    return pow(x, 3)
   },
   easeOutCubic(x: number) {
     return 1 - pow(1 - x, 3)
   },
   easeInOutCubic(x: number) {
-    return x < 0.5 ? 4 * x * x * x : 1 - pow(-2 * x + 2, 3) / 2
+    return x < 0.5 ? 4 * pow(x, 3) : 1 - pow(-2 * x + 2, 3) / 2
   },
   easeInQuart(x: number) {
-    return x * x * x * x
+    return pow(x, 4)
   },
   easeOutQuart(x: number) {
     return 1 - pow(1 - x, 4)
   },
   easeInOutQuart(x: number) {
-    return x < 0.5 ? 8 * x * x * x * x : 1 - pow(-2 * x + 2, 4) / 2
+    return x < 0.5 ? 8 * pow(x, 4) : 1 - pow(-2 * x + 2, 4) / 2
   },
   easeInQuint(x: number) {
-    return x * x * x * x * x
+    return pow(x, 5)
   },
   easeOutQuint(x: number) {
     return 1 - pow(1 - x, 5)
   },
   easeInOutQuint(x: number) {
-    return x < 0.5 ? 16 * x * x * x * x * x : 1 - pow(-2 * x + 2, 5) / 2
+    return x < 0.5 ? 16 * pow(x, 5) : 1 - pow(-2 * x + 2, 5) / 2
   },
   easeInSine(x: number) {
     return 1 - cos((x * PI) / 2)
@@ -149,7 +148,7 @@ const timingFunctionMap: ITimingFunctionMap = {
       : (pow(2, -20 * x + 10) * sin((20 * x - 11.125) * c5)) / 2 + 1
   },
   easeInBack(x: number) {
-    return c3 * x * x * x - c1 * x * x
+    return c3 * pow(x, 3) - c1 * pow(x, 2)
   },
   easeOutBack(x: number) {
     return 1 + c3 * pow(x - 1, 3) + c1 * pow(x - 1, 2)
