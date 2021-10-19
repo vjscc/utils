@@ -67,7 +67,7 @@ export function isBoolean(value: unknown): boolean {
 export function isSymbol(value: unknown): boolean {
   const type = typeof value
   return (
-    type == 'symbol' || (type === 'object' && value != null && getTag(value) == '[object Symbol]')
+    type == 'symbol' || (type === 'object' && !isNull(value) && getTag(value) === '[object Symbol]')
   )
 }
 
@@ -78,18 +78,7 @@ export function isSymbol(value: unknown): boolean {
  * @returns `true` if the argument appears to be a `BigInt`.
  */
 export function isBigInt(value: unknown): boolean {
-  return typeof value == 'bigint'
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a typeof result of `object`.
- *
- * @param value The value to check.
- * @returns `true` if value is object-like, otherwise `false`.
- */
-export function isObjectLike(value: unknown): boolean {
-  return typeof value === 'object' && value !== null
+  return typeof value === 'bigint'
 }
 
 /**
