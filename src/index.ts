@@ -10,7 +10,7 @@ import { debounce, throttle } from './functions'
 import { convertNumberToMoney } from './money'
 import { createRAF, cancelRAF } from './raf'
 import { createRandomInteger, createRandomString, createRandomStringWidthDivider } from './random'
-import { useTimingFunction } from './useTimingFunction'
+import { timingFunctionMap, useTimingFunction } from './useTimingFunction'
 import {
   isUndefined,
   isNull,
@@ -42,6 +42,7 @@ export {
   createRandomInteger,
   createRandomString,
   createRandomStringWidthDivider,
+  timingFunctionMap,
   useTimingFunction,
   isUndefined,
   isNull,

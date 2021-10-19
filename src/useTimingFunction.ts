@@ -56,7 +56,7 @@ interface ITimingFunctionMap {
   easeInOutBounce: timeFunction
 }
 
-const timingFunctionMap: ITimingFunctionMap = {
+export const timingFunctionMap: ITimingFunctionMap = {
   linear(x: number) {
     return x
   },
