@@ -1,6 +1,7 @@
+import { pow, sqrt, sin, cos, PI } from './math'
+
 type timeFunction = (x: number) => number
 
-const { pow, sqrt, sin, cos, PI } = Math
 const c1 = 1.70158
 const c2 = c1 * 1.525
 const c3 = c1 + 1
