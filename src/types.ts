@@ -89,7 +89,7 @@ export function isBigInt(value: unknown): boolean {
  */
 export function isObject(value: unknown): boolean {
   const type = typeof value
-  return value !== null && (type === 'object' || type === 'function')
+  return !isNull(value) && (type === 'object' || type === 'function')
 }
 
 /**
@@ -99,10 +99,10 @@ export function isObject(value: unknown): boolean {
  * @returns `true` if the argument appears to be a plain object.
  */
 export function isPlainObject(value: unknown): boolean {
-  if (typeof value !== 'object' || value === null) return false
+  if (!isObject(value)) return false
 
   let proto = value
-  while (Object.getPrototypeOf(proto) !== null) {
+  while (!isNull(Object.getPrototypeOf(proto))) {
     proto = Object.getPrototypeOf(proto)
   }
 
