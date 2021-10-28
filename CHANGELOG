@@ -5,3 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.2.0 - 2021-10-28
+
+### Added
+
+- Add timing functions with a plain object `timingFunctionMap`.
+- Add `useTimingFunction()` function.
+- Add utils of RAF.
+- Add `isWindow()` function.
+- Add `debounce()` and `throttle()` function.
+- Add `isHTMLElementOrDocument()`, `isStringOrHTMLElement()` and `getElementViaStringOrHTMLElement()` function.
+
+### Changed 
+
+- Optimize `isHTMLElement()` function and aviod error behavior when juding a object instance by `HTMLXXXElement`.
+- Add tags in README.
+- Add unit tests.
+
+## 0.1.0 - 2021-09-30
+
+### Changed
+
+- Rewrite utils with TypeScript. Provide type declaration.
+
