@@ -1,7 +1,21 @@
 {
   "name": "@vjscc/utils",
-  "version": "0.2.0",
+  "description": "Vanilla JavaScript utils collection.",
+  "version": "1.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Gu-Miao",
+    "email": "1450206741@qq.com",
+    "url": "https://github.com/Gu-Miao"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjscc/utils.git"
+  },
+  "homepage": "https://vjscc.github.io/utils/",
+  "bugs": {
+    "url": "https://github.com/vjscc/utils/issues"
+  },
   "files": [
     "package.json",
     "README.md",
