@@ -10,10 +10,10 @@
     "dist"
   ],
   "global": "VjsccUtils",
-  "types": "dist/utils.d.ts",
-  "main": "dist/utils.js",
-  "browser": "dist/browser/utils.min.js",
-  "module": "dist/es/utils.js",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "browser": "dist/browser/vjscc-utils.min.js",
+  "module": "dist/es/index.js",
   "scripts": {
     "prepare": "husky install",
     "start": "parcel test/index.html --dist-dir node_modules/.parcel --cache-dir node_modules/.parcel",

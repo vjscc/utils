@@ -15,12 +15,13 @@ const config = {
       name: pkg.global,
       file: pkg.main,
       format: 'umd',
-      exports: 'auto'
+      exports: 'auto',
+      sourcemap: true
     },
     {
       name: pkg.global,
       file: pkg.browser,
-      format: 'iife',
+      format: 'umd',
       exports: 'auto',
       plugins: [terser()],
       sourcemap: true
@@ -28,7 +29,8 @@ const config = {
     {
       file: pkg.module,
       format: 'esm',
-      exports: 'auto'
+      exports: 'auto',
+      sourcemap: true
     }
   ],
 
@@ -39,7 +41,7 @@ const config = {
     resolve(),
     commonjs(),
     ts({
-      transpiler: 'babel'
+      transpiler: 'swc'
     })
   ]
 }

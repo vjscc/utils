@@ -5,7 +5,7 @@ name: Node.js Package
 
 on:
   release:
-    types: [created, published]
+    types: [published]
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
           node-version: 16
       - run: npm install yarn -g
       - run: yarn install --frozen-lockfile
-      - run: yarn jest
+      - run: yarn test
 
   publish-npm:
     needs: build
