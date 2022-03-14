@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type anyFunction = (...args: any[]) => any
+export type AnyFunction = (...args: any[]) => any
 
 /**
  * Get function with debounce.
@@ -8,7 +8,7 @@ export type anyFunction = (...args: any[]) => any
  * @param delay Delay time before excuting.
  * @returns Function with debounce.
  */
-export function debounce<T extends anyFunction>(
+export function debounce<T extends AnyFunction>(
   fn: T,
   delay: number
 ): (this: ThisParameterType<T>, ...args: Parameters<T>) => void {
@@ -28,22 +28,26 @@ export function debounce<T extends anyFunction>(
  * @param interval Interval time before each excuting.
  * @returns Function with throttle.
  */
-export function throttle<T extends anyFunction>(
+export function throttle<T extends AnyFunction>(
   fn: T,
   interval: number
 ): (this: ThisParameterType<T>, ...args: Parameters<T>) => void {
   let timer: ReturnType<typeof setTimeout> | undefined
-  let last: number | undefined
+  let last = 0
   return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
-    const now = +new Date()
-    if (last && now < last + interval) {
-      if (timer) {
-        clearTimeout(timer)
+    if (!timer) {
+      const now = Date.now()
+      if (now > last + interval) {
+        last = now
+        fn.call(this, ...args)
+      } else {
+        timer = setTimeout(() => {
+          last = Date.now()
+          fn.call(this, ...args)
+          clearTimeout(timer as ReturnType<typeof setTimeout>)
+          timer = undefined
+        }, last + interval - now)
       }
-      timer = setTimeout(() => fn.call(this, ...args), interval)
-    } else {
-      last = now
-      fn.call(this, ...args)
     }
   }
 }

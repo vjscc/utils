@@ -1,12 +1,12 @@
-import { isWindow } from '../index'
+import { isWindow } from '..'
 
-describe('Return correct flag', () => {
+describe('isWindow', () => {
   test('Test window', () => {
     expect(isWindow(window)).toBeTruthy()
     expect(isWindow(window.window)).toBeTruthy()
   })
 
-  test('Not window', () => {
+  test('Test not window', () => {
     expect(isWindow(undefined)).toBeFalsy()
     expect(isWindow(null)).toBeFalsy()
     expect(isWindow(document)).toBeFalsy()

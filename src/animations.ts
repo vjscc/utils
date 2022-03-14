@@ -1,17 +1,17 @@
-import { anyFunction } from './functions'
+import { AnyFunction } from './functions'
 import { createRAF } from './raf'
-import { timingFunctionName, useTimingFunction } from './useTimingFunction'
+import { useTimingFunction, TimingFunction } from './useTimingFunction'
 
-const defalutDuration = 1.25 * 1000
+const defalutDuration = 2 * 1000
 
 // Basic animation functions options.
-interface IAnimationFnOptions {
+export type AnimationFnOptions = {
   duration?: number
-  timingFunctionName?: timingFunctionName
-  callback?: anyFunction
+  timingFunction?: TimingFunction
+  callback?: AnyFunction
 }
 
-interface IFadeFnOptions extends IAnimationFnOptions {
+export type FadeFnOptions = AnimationFnOptions & {
   startOpacity?: number
   startDisplay?: string
   endOpacity?: number
@@ -24,14 +24,14 @@ interface IFadeFnOptions extends IAnimationFnOptions {
  * @param el Dom element.
  * @param options Options.
  */
-export function fadeOut(el: HTMLElement, options: IFadeFnOptions = {}): void {
+export function fadeOut(el: HTMLElement, options: FadeFnOptions = {}): void {
   const computedStyle = getComputedStyle(el)
 
   const {
     duration = defalutDuration,
-    timingFunctionName = 'linear',
+    timingFunction,
     callback,
-    startOpacity = parseFloat(computedStyle.opacity),
+    startOpacity = computedStyle.opacity ? parseFloat(computedStyle.opacity) : 1,
     startDisplay = computedStyle.display,
     endOpacity = 0,
     endDisplay = 'none'
@@ -46,11 +46,11 @@ export function fadeOut(el: HTMLElement, options: IFadeFnOptions = {}): void {
     const now = Date.now()
     const time = now - startTime
     const nextOpacity = useTimingFunction(
-      timingFunctionName,
-      time > duration ? duration : time,
+      Math.min(time, duration),
+      duration,
       startOpacity,
-      0,
-      duration
+      endOpacity,
+      timingFunction
     )
 
     el.style.opacity = nextOpacity.toString()
@@ -73,14 +73,14 @@ export function fadeOut(el: HTMLElement, options: IFadeFnOptions = {}): void {
  * @param el DOM element.
  * @param options Options.
  */
-export function fadeIn(el: HTMLElement, options: IFadeFnOptions = {}): void {
+export function fadeIn(el: HTMLElement, options: FadeFnOptions = {}): void {
   const computedStyle = getComputedStyle(el)
 
   const {
     duration = defalutDuration,
-    timingFunctionName = 'linear',
+    timingFunction,
     callback,
-    startOpacity = parseFloat(computedStyle.opacity),
+    startOpacity = computedStyle.opacity ? parseFloat(computedStyle.opacity) : 0,
     startDisplay = computedStyle.display,
     endOpacity = 1,
     endDisplay = ''
@@ -95,11 +95,11 @@ export function fadeIn(el: HTMLElement, options: IFadeFnOptions = {}): void {
     const now = Date.now()
     const time = now - startTime
     const nextOpacity = useTimingFunction(
-      timingFunctionName,
-      time > duration ? duration : time,
-      0,
-      1,
-      duration
+      Math.min(time, duration),
+      duration,
+      startOpacity,
+      endOpacity,
+      timingFunction
     )
 
     el.style.opacity = nextOpacity.toString()

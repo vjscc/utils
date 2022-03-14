@@ -1,6 +1,4 @@
-import { timingFunctionMap } from '../useTimingFunction'
-
-const {
+import {
   linear,
   swing,
   easeInQuad,
@@ -32,8 +30,9 @@ const {
   easeInOutBack,
   easeInBounce,
   easeOutBounce,
-  easeInOutBounce
-} = timingFunctionMap
+  easeInOutBounce,
+  useTimingFunction
+} from '..'
 
 describe('Return correct values', () => {
   test('Test linear', () => {
@@ -259,5 +258,11 @@ describe('Return correct values', () => {
     expect(easeInOutBounce(0.5)).toEqual(0.5)
     expect(easeInOutBounce(0.75)).toEqual(0.8828125)
     expect(easeInOutBounce(1)).toEqual(1)
+  })
+})
+
+describe('useTimingFunction', () => {
+  test('Get right value of animation', () => {
+    expect(useTimingFunction(1, 10, 0, 100, linear)).toEqual(10)
   })
 })

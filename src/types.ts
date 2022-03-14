@@ -1,3 +1,5 @@
+import type { AnyFunction } from './functions'
+
 /**
  * Get the toString tag of `value`.
  *
@@ -14,7 +16,7 @@ function getTag(value: unknown): string {
  * @param value The value to check.
  * @returns `true` if the argument appears to be `undefined`.
  */
-export function isUndefined(value: unknown): boolean {
+export function isUndefined(value: unknown): value is undefined {
   return value === undefined
 }
 
@@ -24,7 +26,7 @@ export function isUndefined(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if the argument appears to be `null`.
  */
-export function isNull(value: unknown): boolean {
+export function isNull(value: unknown): value is null {
   return value === null
 }
 
@@ -34,7 +36,7 @@ export function isNull(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if value is a string, otherwise `false`.
  */
-export function isString(value: unknown): boolean {
+export function isString(value: unknown): value is string {
   return getTag(value) === '[object String]'
 }
 
@@ -44,7 +46,7 @@ export function isString(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if value is a number, otherwise `false`.
  */
-export function isNumber(value: unknown): boolean {
+export function isNumber(value: unknown): value is number {
   return typeof value === 'number' || (typeof value === 'object' && value instanceof Number)
 }
 
@@ -54,7 +56,7 @@ export function isNumber(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if value is a boolean, otherwise `false`.
  */
-export function isBoolean(value: unknown): boolean {
+export function isBoolean(value: unknown): value is boolean {
   return typeof value === 'boolean'
 }
 
@@ -64,7 +66,7 @@ export function isBoolean(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if the argument appears to be a symbol.
  */
-export function isSymbol(value: unknown): boolean {
+export function isSymbol(value: unknown): value is symbol {
   const type = typeof value
   return (
     type == 'symbol' || (type === 'object' && !isNull(value) && getTag(value) === '[object Symbol]')
@@ -77,7 +79,7 @@ export function isSymbol(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if the argument appears to be a `BigInt`.
  */
-export function isBigInt(value: unknown): boolean {
+export function isBigInt(value: unknown): value is bigint {
   return typeof value === 'bigint'
 }
 
@@ -87,7 +89,7 @@ export function isBigInt(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if the argument appears to be a object.
  */
-export function isObject(value: unknown): boolean {
+export function isObject(value: unknown): value is Record<string, unknown> {
   const type = typeof value
   return !isNull(value) && (type === 'object' || type === 'function')
 }
@@ -98,7 +100,7 @@ export function isObject(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if the argument appears to be a plain object.
  */
-export function isPlainObject(value: unknown): boolean {
+export function isPlainObject(value: unknown): value is Record<string, unknown> {
   if (!isObject(value)) return false
 
   let proto = value
@@ -115,7 +117,8 @@ export function isPlainObject(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if the argument appears to be an array.
  */
-export function isArray(value: unknown): boolean {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function isArray(value: unknown): value is Array<any> {
   return Array.isArray(value)
 }
 
@@ -125,6 +128,6 @@ export function isArray(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if value is a function, otherwise `false`.
  */
-export function isFunction(value: unknown): boolean {
+export function isFunction(value: unknown): value is AnyFunction {
   return typeof value === 'function'
 }

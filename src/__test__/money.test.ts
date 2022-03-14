@@ -1,6 +1,6 @@
-import { convertNumberToMoney } from '../index'
+import { convertNumberToMoney } from '..'
 
-describe('Generate correct money string with thousand mark', () => {
+describe('convertNumberToMoney', () => {
   test('Pass illegal string as first argument', () => {
     expect(() => convertNumberToMoney('')).toThrow()
     expect(() => convertNumberToMoney('true')).toThrow()

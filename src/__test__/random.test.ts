@@ -1,8 +1,45 @@
-import { createRandomStringWidthDivider } from '../index'
+import { createRandomInteger, createRandomString, createRandomStringWidthDivider } from '..'
 
 const times = 100
 
-describe('Generate correct random string with divider', () => {
+describe('createRandomInteger', () => {
+  test('Return is a integer', () => {
+    for (let i = 0; i < times; i++) {
+      const random = createRandomInteger(Math.random() * 1000)
+      expect(random).toBe(parseInt(random.toString()))
+    }
+  })
+
+  test('Return is in correct range', () => {
+    for (let i = 0; i < times; i++) {
+      const range = Math.random() * 1000
+      const random = createRandomInteger(range)
+      expect(random).toBeGreaterThanOrEqual(0)
+      expect(random).toBeLessThanOrEqual(range)
+    }
+  })
+})
+
+describe('createRandomString', () => {
+  test('Return only includes letters and numbers', () => {
+    const regexp = /^[a-zA-Z0-9]*$/
+    for (let i = 0; i < times; i++) {
+      const length = Math.round(Math.random() * 1000)
+      const string = createRandomString(length)
+      expect(regexp.test(string)).toBeTruthy()
+    }
+  })
+
+  test('Return length-correct string', () => {
+    for (let i = 0; i < times; i++) {
+      const length = Math.round(Math.random() * 1000)
+      const string = createRandomString(length)
+      expect(string.length).toBe(length)
+    }
+  })
+})
+
+describe('createRandomStringWidthDivider', () => {
   test('Return only includes letters and numbers and divider', () => {
     const format = 'xxxx-xxx-xxxxx-xxxxxxxx-x'
     const regexp = /^[a-zA-Z0-9\-^_\\/]+$/

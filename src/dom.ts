@@ -6,7 +6,7 @@ import { isString } from './types'
  * @param value The value to check.
  * @returns True if it is, false if it isn't.
  */
-export function isHTMLElement(value: unknown): boolean {
+export function isHTMLElement(value: unknown): value is HTMLElement {
   const assertValue = value as HTMLElement
   if (!/^HTML\S*Element$/.test(assertValue?.constructor?.name) || assertValue.nodeType !== 1) {
     return false
@@ -28,7 +28,7 @@ export function isHTMLElement(value: unknown): boolean {
  * @param value The value to check.
  * @returns `true` if it is, otherwise `false`.
  */
-export function isHTMLElementOrDocument(value: unknown): boolean {
+export function isHTMLElementOrDocument(value: unknown): value is HTMLElement | Document {
   return value === document || isHTMLElement(value)
 }
 
@@ -38,11 +38,11 @@ export function isHTMLElementOrDocument(value: unknown): boolean {
  * @param value Target value to check.
  * @returns True if it is string or HTMLELement, false otherwise.
  */
-export function isStringOrHTMLElement(value: unknown): boolean {
+export function isStringOrHTMLElement(value: unknown): value is StringOrHTMLElement {
   return isString(value) || isHTMLElement(value)
 }
 
-type stringOrHTMLElement = string | HTMLElement
+export type StringOrHTMLElement = string | HTMLElement
 
 /**
  * Get element via string or HTMLElement.
@@ -52,7 +52,7 @@ type stringOrHTMLElement = string | HTMLElement
  * @returns HTMLElement or null if not found or fail.
  */
 export function getElementViaStringOrHTMLElement(
-  stringOrHTMLElement: stringOrHTMLElement,
+  stringOrHTMLElement: StringOrHTMLElement,
   container: HTMLElement | Document = document
 ): HTMLElement | null {
   if (isHTMLElement(stringOrHTMLElement)) {
@@ -60,8 +60,7 @@ export function getElementViaStringOrHTMLElement(
   }
   try {
     return container.querySelector(stringOrHTMLElement as string)
-  } catch (err) {
-    console.error(err)
+  } catch {
     return null
   }
 }
