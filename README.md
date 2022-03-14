@@ -8,8 +8,6 @@ Vanilla JavaScript utils collection.
 ![Codecov](https://img.shields.io/codecov/c/github/vjscc/utils?logo=codecov&style=flat-square)
 ![GitHub](https://img.shields.io/github/license/vjscc/utils?logo=github&style=flat-square)
 
-[简体中文](./README_zh.md) | **English**
-
 ## Install
 
 - Use npm:
