@@ -1,16 +1,10 @@
-import { fadeOut, fadeIn } from '../src/animations'
+import { fadeOut, fadeIn } from '../src'
 
-const h1 = document.querySelector('h1')
-if (!h1) {
-  throw new Error('fuck')
-}
+const h1 = document.querySelector('h1') as HTMLElement
 
 function _in() {
-  fadeIn(h1 as HTMLElement, { duration: 5000 })
+  fadeIn(h1, { duration: 5000, startDisplay: '' })
 }
-
-if (h1) {
-  setTimeout(() => {
-    fadeOut(h1, { duration: 1000, callback: _in })
-  }, 1000)
-}
+setTimeout(() => {
+  fadeOut(h1, { duration: 1000, callback: _in })
+}, 1000)
