@@ -20,7 +20,7 @@ const config = {
     },
     {
       name: pkg.global,
-      file: pkg.browser,
+      file: 'dist/browser/vjscc-utils.min.js',
       format: 'umd',
       exports: 'auto',
       plugins: [terser()],
