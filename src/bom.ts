@@ -21,6 +21,6 @@ export function getBase64(file: File): Promise<FileReader['result'] | ProgressEv
  * @param value The value to check.
  * @returns `true` if it's `window`, otherwise return `false`.
  */
-export function isWindow(value: unknown): boolean {
+export function isWindow(value: unknown): value is Window {
   return !isNull(value) && !isUndefined(value) && value === (value as Window).window
 }
