@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import pkg from './package.json'
 
 import clear from 'rollup-plugin-clear'
